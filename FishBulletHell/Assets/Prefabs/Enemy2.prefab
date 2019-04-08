@@ -119,7 +119,7 @@ MonoBehaviour:
   speed: 2
   bullet: {fileID: 7083418004725073999, guid: f41c6281998878b41a30511a838d2861, type: 3}
   firePos: {fileID: 3282879068243260735}
-  hitClip: {fileID: 8300000, guid: b4780790e24e487469738ee9ec6bc7ef, type: 3}
+  hitClip: {fileID: 8300000, guid: 099d68bc3febd2048900fd9b9df869cb, type: 3}
 --- !u!70 &1493608046780279518
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
