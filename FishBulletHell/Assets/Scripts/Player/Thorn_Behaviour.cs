@@ -20,4 +20,10 @@ public class Thorn_Behaviour : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = new Vector2(10f * xDir, 10f * yDir);
     }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.CompareTag("Endscreen2")) {
+            Destroy(gameObject);
+        }
+    }
 }

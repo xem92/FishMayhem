@@ -30,6 +30,7 @@ public class GameManager_BehaviourScript : MonoBehaviour {
     private float healthTimer;
     private float gameTimer;
     private float algaTimer;
+    private float powerSpawnTime;
 
     private float algaRandomTimer;
 
@@ -52,6 +53,7 @@ public class GameManager_BehaviourScript : MonoBehaviour {
         algaTimer = 0f;
 
         algaRandomTimer = Random.Range(0.0f, 2.0f);
+        powerSpawnTime = 15.0f;
 
         player = GameObject.Find("Fish");
         points = 0;
@@ -108,9 +110,10 @@ public class GameManager_BehaviourScript : MonoBehaviour {
 
     private void managePower() {
         if (player != null) {
-            if (powerTimer > 15.0f) {
+            if (powerTimer > powerSpawnTime) {
                 int powerup = player.GetComponent<Player_Movement>().getPowerUp();
                 spawnPowerup(powerup);
+                powerSpawnTime = Random.Range(12.5f, 20.0f);
             }
         }
     }
@@ -196,6 +199,7 @@ public class GameManager_BehaviourScript : MonoBehaviour {
         gameOverCanvas.enabled = true;
         gameCanvas.enabled = false;
         finalScore.text = "Score: " + points;
+        AudioManager_Script.instance.StopMusic();
     }
 
     private void manageExtras() {

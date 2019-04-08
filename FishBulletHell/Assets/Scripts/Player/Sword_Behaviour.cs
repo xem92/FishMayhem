@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Sword_Behaviour : MonoBehaviour {
-    public float lifetime = 0.1f;
+    public float lifetime = 0.5f;
     public float velocity = 10f;
     private Rigidbody2D rb2d;
 
